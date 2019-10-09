@@ -13,10 +13,11 @@ public class Main
 {
     public static void main( String[] args )
     {
-        ApplicationContext context = new AnnotationConfigApplicationContext(DataConfig.class);
-        Movie movie = context.getBean("movie",Movie.class);
-
-       movie.displayMovieInfo();
+        System.out.println("\n"+"using Application context"+"\n");
+        ApplicationContext applicationContext= new AnnotationConfigApplicationContext(DataConfig.class);
+        System.out.println("\n Aware Interface Values \n");
+        Movie movie= (Movie) applicationContext.getBean("moviebean",Movie.class);
+        movie.displayMovieInfo();
 
     }
 }

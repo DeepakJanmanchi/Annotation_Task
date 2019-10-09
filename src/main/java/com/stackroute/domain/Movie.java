@@ -4,15 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class Movie {
-    @Autowired
-    @Qualifier("actor1")
-    Actor actorName;
+
+    private Actor actor;
+
+    public Movie(Actor act) {
+        this.actor = act;
+    }
+
 
 
     public void displayMovieInfo(){
-        System.out.println("Actor name is:" + actorName.getName());
+        System.out.println("Actor name is:" + actor.getName());
     }
 
 }
