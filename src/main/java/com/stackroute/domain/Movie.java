@@ -4,16 +4,17 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Movie {
-    private Actor act;
 
-    public Movie(Actor act) {
-        this.act = act;
+
+    Actor actorName;
+
+    public Movie(Actor actorName) {
+
+        this.actorName = actorName;
     }
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "actorName=" + act.getName() +"\t"+"actorAge=" + act.getAge() +"\t"+ "actorGender=" + act.getGender() +
-                '}';
+    public void displayMovieInfo(){
+        System.out.println("Actor name is:" + actorName.getName());
     }
+
 }

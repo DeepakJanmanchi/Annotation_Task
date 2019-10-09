@@ -17,7 +17,7 @@ public class DataConfig {
     }
     @Bean
     public Actor act() {
-        Actor act = new Actor();
+        Actor act = new Actor("Robert Downey", "male", 52);
         act.setName("Robert Downey Jr");
         act.setAge(52);
         act.setGender("male");
