@@ -14,7 +14,7 @@ public class Main
     public static void main( String[] args )
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(DataConfig.class);
-        Movie movie = context.getBean("moviebean", Movie.class);
+        Movie movie = context.getBean("movie",Movie.class);
 
        movie.displayMovieInfo();
 
