@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.domain.Actor;
+import com.stackroute.domain.BeanLifeCycleDemo;
 import com.stackroute.domain.Movie;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,11 @@ public class DataConfig {
         Movie movieBean = new Movie(act());
 
         return movieBean;
+    }
+    @Bean(name = "BeanLifeCycleDemo")
+    public BeanLifeCycleDemo beanLifeCycleDemoObject()
+    {
+        return new BeanLifeCycleDemo();
     }
 
 }

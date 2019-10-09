@@ -1,23 +1,28 @@
 package com.stackroute;
 
-import com.stackroute.DataConfig;
-import com.stackroute.domain.Movie;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.stackroute.domain.BeanLifeCycleDemo;
+import com.stackroute.domain.BeanLifeCycleDemo;
 
-/**
- * Hello world!
- *
- */
-public class Main
-{
-    public static void main( String[] args )
-    {
-        System.out.println("\n"+"using Application context"+"\n");
+import com.stackroute.domain.Movie;
+import org.springframework.beans.factory.support.BeanDefinitionReader;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+
+public class Main {
+    public static void main(String[] args) {
+
         ApplicationContext applicationContext= new AnnotationConfigApplicationContext(DataConfig.class);
-        System.out.println("\n Aware Interface Values \n");
-        Movie movie= (Movie) applicationContext.getBean("moviebean",Movie.class);
-        movie.displayMovieInfo();
+        BeanLifeCycleDemo bee = (BeanLifeCycleDemo) applicationContext.getBean("BeanLifeCycleDemo");
+
+        System.out.println(bee);
+
+
+
 
     }
 }
